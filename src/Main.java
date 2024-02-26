@@ -1,22 +1,14 @@
-import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
+        int monitors = 33;
+        int programmers = 30;
         Main main = new Main();
-        int monitors = main.drawisMonitorsCounter();
-        System.out.println("Количество мониторов " + monitors);
+        int result = main.drawisMonitorsCounter(monitors, programmers);
+        System.out.println(result);
     }
-    public int drawisMonitorsCounter() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите колличесвто мониторов: ");
-        int monitors = scanner.nextInt();
-        System.out.print("Введите количество прогроаммистов: ");
-        int programmers = scanner.nextInt();
-        if( monitors < programmers){
-            System.out.println("Мониторов не хватает");
-        }
-        monitors = monitors - programmers;
-        return monitors;
+    public int drawisMonitorsCounter(int monitors, int programmers){
+        return   monitors % programmers;
     }
 }
+
